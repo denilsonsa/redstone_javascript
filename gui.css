@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+#maingrid {
+	border: 4px ridge #F88;
+}
+
+table.grid {
+	border-collapse: collapse;
+	border: 2px solid black;
+}
+table.grid > tbody > tr > td {
+	border: 1px solid black;
+	width: 32px;
+	height: 32px;
+}
