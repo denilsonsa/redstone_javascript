@@ -1,0 +1,85 @@
+{
+	"depth": 2,
+	"height": 5,
+	"width": 5,
+	"grids": [
+		{
+			"cells": [
+				[
+					{ "block": "wool_0" },
+					{ "block": "wool_1" },
+					{ "block": "wool_2" },
+					{ "block": "wool_3" },
+					{ "block": "wool_4" }
+				],
+				[
+					{ "block": "wool_5" },
+					{ "block": "wool_6" },
+					{ "block": "wool_7" },
+					{ "block": "wool_8" },
+					{ "block": "wool_9" }
+				],
+				[
+					{ "block": "wool_a" },
+					{ "block": "wool_b" },
+					{ "block": "wool_c" },
+					{ "block": "wool_d" },
+					{ "block": "wool_e" }
+				],
+				[
+					{ "block": "wool_f" },
+					{ "block": "dirt" },
+					{ "block": "sand" },
+					{ "block": "air" },
+					{ "block": "air" }
+				],
+				[
+					{ "block": "air" },
+					{ "block": "air" },
+					{ "block": "air" },
+					{ "block": "air" },
+					{ "block": "air" }
+				]
+			]
+		},
+		{
+			"cells": [
+				[
+					{ "block": "air" },
+					{ "block": "button_n" },
+					{ "block": "button_e" },
+					{ "block": "button_s" },
+					{ "block": "button_w" }
+				],
+				[
+					{ "block": "lever_up" },
+					{ "block": "lever_n" },
+					{ "block": "lever_e" },
+					{ "block": "lever_s" },
+					{ "block": "lever_w" }
+				],
+				[
+					{ "block": "torch_up" },
+					{ "block": "torch_n" },
+					{ "block": "torch_e" },
+					{ "block": "torch_s" },
+					{ "block": "torch_w" }
+				],
+				[
+					{ "block": "plate_wood" },
+					{ "block": "repeater_n" },
+					{ "block": "repeater_e" },
+					{ "block": "repeater_s" },
+					{ "block": "repeater_w" }
+				],
+				[
+					{ "block": "wire_nsew" },
+					{ "block": "wire_ne" },
+					{ "block": "wire_se" },
+					{ "block": "wire_sw" },
+					{ "block": "wire_nw" }
+				]
+			]
+		}
+	]
+}

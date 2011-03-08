@@ -15,7 +15,25 @@
 </head>
 <body>
 
-<div id="maingrid">
+<div id="leftcolumn">
+
+<!-- Some quick-and-dirty interface for quick experiments -->
+<!-- Should be replaced later! -->
+<input type="button" value="Map view" onclick="map_view_clicked()">
+<input type="button" value="JSON view" onclick="json_view_clicked()">
+
+</div>
+
+<div id="rightcolumn">
+
+	<div id="maingrid">
+	</div>
+
+	<div id="saveloadarea">
+		<textarea id="saveloadtextarea"></textarea>
+		<input type="button" value="Import JSON" onclick="import_json_clicked()">
+	</div>
+
 </div>
 
 </body>

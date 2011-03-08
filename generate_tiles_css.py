@@ -25,7 +25,7 @@ tile_map = [
 ['wire_new',	'wire_nse',	'wire_sew',	'wire_nsw',	'wire_ne',	'wire_se',	'wire_sw',	'wire_nw'],
 ['torch_up',	'torch_s',	'torch_w',	'torch_n',	'torch_e',	'wire_nsew',	'wire_ew',	'wire_ns'],
 ['wire_new',	'wire_nse',	'wire_sew',	'wire_nsw',	'wire_ne',	'wire_se',	'wire_sw',	'wire_nw'],
-['wool_F',	'wool_E',	'wool_D',	'wool_C',	'wool_B',	'wool_A',	'wool_9',	'wool_8',],
+['wool_f',	'wool_e',	'wool_d',	'wool_c',	'wool_b',	'wool_a',	'wool_9',	'wool_8',],
 ['wool_7',	'wool_6',	'wool_5',	'wool_4',	'wool_3',	'wool_2',	'wool_1',	'wool_0',],
 ['repeater_n',	'repeater_e',	'repeater_s',	'repeater_w',	'repeater_n',	'repeater_e',	'repeater_s',	'repeater_w',],
 ]
