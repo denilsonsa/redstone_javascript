@@ -5,7 +5,10 @@ function add_class(element, className) {
 	element.className += ' ' + className;
 }
 function remove_class(element, className) {
-	element.className = element.className.replace(new RegExp('\\b'+className+'\\b',''));
+	element.className = element.className.replace(
+		// Removing the class
+		new RegExp('\\b'+className+'\\b','g'),''
+	).replace(/  +/g, ' ');  // Removing duplicate space chars
 }
 
 
