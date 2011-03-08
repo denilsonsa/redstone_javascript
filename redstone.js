@@ -22,7 +22,7 @@ function new_table_grid(width, height) {
 
 function do_something() {
 	var maingrid = document.getElementById('maingrid');
-	maingrid.appendChild(new_table_grid(16,16))
+	maingrid.appendChild(new_table_grid(8,12))
 }
 
 window.addEventListener('load', do_something, false);

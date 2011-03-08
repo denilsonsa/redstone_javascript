@@ -6,14 +6,14 @@ from __future__ import print_function
 
 
 img_width = 256
-img_height = 256
-tile_width = 16
-tile_height = 16
+img_height = 288
+tile_width = 32
+tile_height = 32
 
 css_header = '''@charset "UTF-8";
 
 .tile {
-    background-image: url("minecraft_jar/terrain.png");
+    background-image: url("tiles.png");
     background-repeat: no-repeat;
 }
 '''

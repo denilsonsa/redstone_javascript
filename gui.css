@@ -7,12 +7,15 @@
 table.grid {
 	table-layout: fixed;
 	border-collapse: collapse;
-	border: 2px solid black;
+	border: 1px solid black;
 	padding: 0;
 }
 table.grid > tbody > tr > td {
 	border: 1px solid black;
 	padding: 0;
-	width: 16px;
-	height: 16px;
+	width: 32px;
+	height: 32px;
+
+	text-align: center;
+	vertical-align: middle;
 }
