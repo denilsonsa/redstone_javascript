@@ -36,6 +36,9 @@ ul.simple_tab_menu > li > a {
 	/* Someday, gradients as background...
 	 * http://www.quirksmode.org/css/gradient.html
 	 */
+
+	/* http://www.google.com/webfonts/family?family=Geo */
+	font-family: "Geo", sans-serif;
 }
 ul.simple_tab_menu > li {
 	margin-left: 4px;
