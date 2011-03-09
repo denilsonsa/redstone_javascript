@@ -1,29 +1,6 @@
 // This file defines the basic data objects and data structures.
 
 
-// About JSON representation:
-//
-// The current implementation stringifies to a JSON object that is
-// redundant:
-//
-// * For each Cell:
-//   * The x, y, z coordinates are also saved (not needed, since we know the
-//     cell position from its position in the array).
-//   * The block type is also saved (not needed, as we know the block type
-//     based on the block itself)
-// * For each Grid:
-//   * The width and height are also saved (not needed, as we already know the
-//     dimensions from the Map)
-//   * The Z coordinate is also saved (not needed, as we know from the
-//     position in the array)
-//
-// All this redundant data is ignored when loading from a JSON object.
-//
-// Note, however, that the (top-level) Map object contains the dimensions
-// (depth, height and width), and these dimensions are NOT ignored when
-// loading from JSON.
-
-
 // The Map object
 //
 // A Map is composed of Grid objects, which are composed of Cell objects.
@@ -67,7 +44,6 @@ function Map(depth_or_json, height, width) {
 	}
 }
 Map.prototype.toJSON = function() {
-	// Ignores extra properties and circular references.
 	return {
 		'depth': this.depth,
 		'height': this.height,
@@ -139,11 +115,10 @@ function Grid(map, z, height, width, json_data) {
 	}
 }
 Grid.prototype.toJSON = function() {
-	// Ignores extra properties and circular references.
 	return {
-		'z': this.z,
-		'width': this.width,
-		'height': this.height,
+		//'z': this.z,
+		//'width': this.width,
+		//'height': this.height,
 		'cells': this.cells
 	};
 }
@@ -238,13 +213,12 @@ function Cell(grid, z, y, x) {
 	this.type = BLOCK_TYPE.AIR;
 }
 Cell.prototype.toJSON = function() {
-	// Ignores extra properties and circular references.
 	return {
-		'z': this.z,
-		'y': this.y,
-		'x': this.x,
-		'block': this.block,
-		'type': this.type
+		//'z': this.z,
+		//'y': this.y,
+		//'x': this.x,
+		//'type': this.type,
+		'block': this.block
 	};
 }
 Cell.prototype.set = function(block_name) {
