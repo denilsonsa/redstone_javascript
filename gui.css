@@ -61,22 +61,34 @@ h1 {
 	font-family: "Geo", sans-serif;
 	font-size: 36px;
 	line-height: 1em;
-	margin: 0;
+	margin: 0 0 0 4px;
 	padding: 0;
 	text-align: left;
 }
 
 
+/* Left column elements */
+#map_view_style fieldset label {
+	display: block;
+}
+#map_view_style fieldset input[type=number] {
+	width: 4em;
+}
+#map_view_style fieldset input[type=range] {
+	width: 6em;
+}
+
+
 /* Map Grid */
+#main_grid {
+	/* Just to take the simple_tab_body padding into account when positioning the grid.*/
+	position: relative;
+}
 table.grid {
 	table-layout: fixed;
 	border-collapse: collapse;
 	border: 1px solid black;
 	padding: 0;
-
-	/* If the browser doesn't support rgba() syntax, we fall back to plain white color */
-	background-color: white;
-	background-color: rgba(255, 255, 255, 0.5);
 }
 table.grid > tbody > tr > td {
 	border: 1px solid black;
@@ -107,33 +119,3 @@ table.grid > tbody > tr > td {
 	margin: 0;
 }
 
-
-
-/* Code below needs to be rewritten or moved to somewhere else */
-
-
-#main_grid.side_by_side table.grid {
-	float: left;
-	margin-right: 4px;
-	margin-bottom: 4px;
-}
-
-#main_grid.stack_on_top table.grid {
-	position: absolute;
-}
-#main_grid.stack_on_top table.grid.depth0 { top: 0px; left: 0px; }
-#main_grid.stack_on_top table.grid.depth1 { top: 4px; left: 4px; }
-#main_grid.stack_on_top table.grid.depth2 { top: 8px; left: 8px; }
-#main_grid.stack_on_top table.grid.depth3 { top: 12px; left: 12px; }
-#main_grid.stack_on_top table.grid.depth4 { top: 16px; left: 16px; }
-#main_grid.stack_on_top table.grid.depth5 { top: 20px; left: 20px; }
-#main_grid.stack_on_top table.grid.depth6 { top: 24px; left: 24px; }
-#main_grid.stack_on_top table.grid.depth7 { top: 28px; left: 28px; }
-#main_grid.stack_on_top table.grid.depth8 { top: 32px; left: 32px; }
-#main_grid.stack_on_top table.grid.depth9 { top: 36px; left: 36px; }
-#main_grid.stack_on_top table.grid.depth10 { top: 40px; left: 40px; }
-#main_grid.stack_on_top table.grid.depth11 { top: 44px; left: 44px; }
-#main_grid.stack_on_top table.grid.depth12 { top: 48px; left: 48px; }
-#main_grid.stack_on_top table.grid.depth13 { top: 52px; left: 52px; }
-#main_grid.stack_on_top table.grid.depth14 { top: 56px; left: 56px; }
-#main_grid.stack_on_top table.grid.depth15 { top: 60px; left: 60px; }

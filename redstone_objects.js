@@ -5,7 +5,7 @@
 
 // JSLint comments:
 /*global BLOCK, BLOCK_TYPE, BLOCK_TO_BLOCK_TYPE, add_class, remove_class, document */
-/*jslint white:true, undef: true, newcap: true, nomen: true, regexp: true, bitwise: true, maxerr: 50, maxlen: 78, indent: 4 */
+/*jslint white: true, onevar: false, undef: true, newcap: true, nomen: true, regexp: true, bitwise: true, maxerr: 50, maxlen: 78, indent: 4 */
 
 
 // The Cell object

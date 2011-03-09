@@ -1,7 +1,7 @@
 // This file defines some constants that are used by the rest of the code.
 
 // JSLint comments:
-/*jslint undef: true, newcap: true, nomen: true, regexp: true, bitwise: true, maxerr: 50, maxlen: 78 */
+/*jslint onevar: false, undef: true, newcap: true, nomen: true, regexp: true, bitwise: true, maxerr: 50, maxlen: 78 */
 
 // This table is manually written.
 var RAW_BLOCK_TABLE = [

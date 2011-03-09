@@ -31,12 +31,19 @@
 	<div id="leftcolumn">
 		[ Here, someday in future... A toolbox... And some options too. ]
 
-		<form>
+		<form id="map_view_style">
 		<fieldset>
-			<legend>Map style</legend>
-			<label><input type="radio" name="map_style" value="" checked> Nothing</label>
-			<label><input type="radio" name="map_style" value="side_by_side"> Side-by-side</label>
-			<label><input type="radio" name="map_style" value="stacking"> Stacking</label>
+			<legend>Map view style</legend>
+
+			<label><input type="radio" name="style" value="below"> One below another</label>
+			<label><input type="radio" name="style" value="side_by_side"> Side-by-side</label>
+			<label><input type="radio" name="style" value="stacking" checked> Stacking</label>
+
+			<label>Hor. offset: <input type="number" name="hor_offset" value="4"></label>
+			<label>Vert. offset: <input type="number" name="vert_offset" value="4"></label>
+
+			<label>Bg. opacity: <input type="range" name="bg_opacity" value="0.25" min="0.0" max="1.0" step="0.0625"></label>
+			<label>Fg. opacity: <input type="range" name="fg_opacity" value="1.00" min="0.0" max="1.0" step="0.0625"></label>
 		</fieldset>
 		</form>
 
@@ -45,13 +52,15 @@
 	<div id="rightcolumn">
 
 		<ul id="main_tabs" class="simple_tab_menu">
-			<li><a href="#main_grid">Map view</a></li>
+			<li><a href="#map_view">Map view</a></li>
 			<li><a href="#import_export">Import/Export</a></li>
 			<li><a href="#about">About</a></li>
 		</ul>
 
-		<div id="main_grid" class="simple_tab_body">
-			<!-- The map will be rendered here, using JavaScript -->
+		<div id="map_view" class="simple_tab_body">
+			<div id="main_grid">
+				<!-- The map will be rendered here, using JavaScript -->
+			</div>
 		</div>
 
 		<div id="import_export" class="simple_tab_body">
