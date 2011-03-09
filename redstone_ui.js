@@ -1,7 +1,7 @@
 // This file defines the User-Interface and everything browser-related.
 
 // JSLint comments:
-/*global add_class, remove_class, parseIntOrDefault, parseFloatOrDefault, Map, simple_tab_init, document, window, alert */
+/*global add_class, remove_class, has_class, toggle_class, parseIntOrDefault, parseFloatOrDefault, Map, simple_tab_init, document, window, alert */
 /*jslint white: true, onevar: false, undef: true, newcap: true, nomen: true, regexp: true, bitwise: true, maxerr: 50, maxlen: 78, indent: 4 */
 
 var global_map;
@@ -20,19 +20,16 @@ function toggle_collapsable_fieldset(ev) {
 		return;
 	}
 
-	if (fieldset.className.indexOf('collapsable') > -1) {
-		if (fieldset.className.indexOf('collapsed') > -1) {
-			remove_class(fieldset, 'collapsed');
-		} else {
-			add_class(fieldset, 'collapsed');
-		}
+	if (has_class(fieldset, 'collapsable')) {
+		toggle_class(fieldset, 'collapsed');
 	}
 
 	ev.preventDefault();
 }
 function init_collasable_fieldsets() {
-	// Adding "Collapsable fieldsets" event handlers
+	// Adding event handlers to collapsable fieldsets
 	var fs_legends = document.querySelectorAll('fieldset.collapsable > legend');
+	var i;
 	for (i = 0; i < fs_legends.length; i++) {
 		fs_legends[i].addEventListener('click', toggle_collapsable_fieldset, false);
 	}

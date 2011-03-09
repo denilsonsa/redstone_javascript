@@ -14,6 +14,17 @@ function remove_class(element, className) {
 	// Removes the class, and then also removes duplicate space chars
 	element.className = element.className.replace(pattern, '').replace(/ {2,}/g, ' ');
 }
+function has_class(element, className) {
+	var pattern = new RegExp('\\b' + className + '\\b');
+	return pattern.test(element.className);
+}
+function toggle_class(element, className) {
+	if (has_class(element, className)) {
+		remove_class(element, 'collapsed');
+	} else {
+		add_class(element, 'collapsed');
+	}
+}
 
 function parseIntOrDefault(s, default_value) {
 	// Converts a string to an integer (using base 10) and returns it.
