@@ -5,11 +5,37 @@ function add_class(element, className) {
 	element.className += ' ' + className;
 }
 function remove_class(element, className) {
-	element.className = element.className.replace(
-		// Removing the class
-		new RegExp('\\b' + className + '\\b', 'g'),
-		''
-	).replace(/ {2,}/g, ' ');  // Removing duplicate space chars
+	var pattern;
+	if (className instanceof RegExp) {
+		pattern = className;
+	} else {
+		pattern = new RegExp('\\b' + className + '\\b', 'g');
+	}
+	// Removes the class, and then also removes duplicate space chars
+	element.className = element.className.replace(pattern, '').replace(/ {2,}/g, ' ');
+}
+
+function parseIntOrDefault(s, default_value) {
+	// Converts a string to an integer (using base 10) and returns it.
+	// If the string can't be converted, returns a supplied default_value
+	// (instead of parseInt() behavior of returning NaN).
+
+	var r = parseInt(s, 10);
+	if (isNaN(r)) {
+		r = default_value;
+	}
+	return r;
+}
+function parseFloatOrDefault(s, default_value) {
+	// Converts a string to a float and returns it.
+	// If the string can't be converted, returns a supplied default_value
+	// (instead of parseFloat() behavior of returning NaN).
+
+	var r = parseFloat(s);
+	if (isNaN(r)) {
+		r = default_value;
+	}
+	return r;
 }
 
 
