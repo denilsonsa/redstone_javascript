@@ -2,12 +2,13 @@
 
 
 var global_map;
+var main_tabs;
 
 function render_map_to_interface() {
-	var maingrid = document.getElementById('maingrid');
+	var main_grid = document.getElementById('main_grid');
 
 	global_map.create_tables().forEach( function(el, index, array){
-		maingrid.appendChild(el);
+		main_grid.appendChild(el);
 	});
 }
 
@@ -21,6 +22,8 @@ function destroy_map() {
 
 
 function do_something() {
+	main_tabs = simple_tab_init('main_tabs', 'main_grid');
+
 	global_map = new Map(2, 10, 8);
 	render_map_to_interface();
 }
@@ -30,23 +33,9 @@ window.addEventListener('load', do_something, false);
 
 // Some quick-and-dirty interface for quick experiments
 // Should be replaced later!
-function map_view_clicked() {
-	var maingrid = document.getElementById('maingrid');
-	var saveloadarea = document.getElementById('saveloadarea');
-
-	maingrid.style.visibility = 'visible';
-	saveloadarea.style.visibility = 'hidden';
-}
-function json_view_clicked() {
-	var maingrid = document.getElementById('maingrid');
-	var saveloadarea = document.getElementById('saveloadarea');
-
-	maingrid.style.visibility = 'hidden';
-	saveloadarea.style.visibility = 'visible';
-}
 function import_json_clicked() {
-	var saveloadtextarea = document.getElementById('saveloadtextarea');
-	var str = saveloadtextarea.value;
+	var import_export_textarea = document.getElementById('import_export_textarea');
+	var str = import_export_textarea.value;
 	var json_obj;
 
 	try {
@@ -60,4 +49,12 @@ function import_json_clicked() {
 		global_map = new Map(json_obj);
 		render_map_to_interface();
 	}
+}
+function export_json_clicked() {
+	var import_export_textarea = document.getElementById('import_export_textarea');
+	import_export_textarea.value = JSON.stringify(global_map);
+}
+function export_pretty_json_clicked() {
+	var import_export_textarea = document.getElementById('import_export_textarea');
+	import_export_textarea.value = JSON.stringify(global_map, null, '\t');
 }

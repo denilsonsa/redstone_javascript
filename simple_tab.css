@@ -1,0 +1,86 @@
+@charset "UTF-8";
+
+/* Both .simple_tab_menu and .simple_tab_body should be contained in a
+ * <div> (or any other element) that has position: absolute or relative.
+ */
+
+
+/* Just resetting some elements... */
+ul.simple_tab_menu,
+ul.simple_tab_menu > li,
+ul.simple_tab_menu > li > a {
+	display: block;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+
+/* These are cosmetic changes that don't mess with the layout calculations */
+.simple_tab_body,
+ul.simple_tab_menu > li > a {
+	border-color: #EEE #555 #555 #EEE;
+	border-style: solid;
+
+	background: #C6C6C6;
+	color: black;
+}
+ul.simple_tab_menu > li > a {
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+	text-decoration: none;
+
+	border-radius: 8px 8px 0 0;
+	-moz-border-radius: 8px 8px 0 0;
+
+	/* Someday, gradients as background...
+	 * http://www.quirksmode.org/css/gradient.html
+	 */
+}
+ul.simple_tab_menu > li {
+	margin-left: 4px;
+}
+.simple_tab_body {
+	padding: 1em;
+}
+
+
+/* Be careful if you change the code below! */
+.simple_tab_body {
+	border-width: 1px;
+
+	position: absolute;
+	top: 27px;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	overflow: auto;
+}
+ul.simple_tab_menu {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	/*height: 27px;*/  /* the height is not needed here */
+
+	z-index: 2;  /* on top of .simple_tab_body */
+}
+ul.simple_tab_menu > li {
+	float: left;
+}
+ul.simple_tab_menu > li > a {
+	font-size: 14px;
+	border-width: 1px 1px 0 1px;
+	margin-top: 2px;  /* Changed on .active*/
+	padding-top: 6px;
+	padding-bottom: 4px;  /* Changed on .active*/
+
+	line-height: 1em;
+}
+ul.simple_tab_menu > li.active > a {
+	margin-top: 0px;
+
+	/* previous padding + previous margin-top + simple_tab_body's border-width */
+	padding-bottom: 7px;
+}
+

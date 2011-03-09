@@ -1,5 +1,21 @@
 @charset "UTF-8";
 
+/* Some basic styles... */
+html, body {
+	margin: 0;
+	padding: 0;
+	background: white;
+	color: black;
+}
+img, a img {
+	border: 0;
+}
+h1 {
+	margin: 0;
+}
+
+
+/* Main layout */
 #leftcolumn {
 	position: absolute;
 	top: 0;
@@ -16,25 +32,16 @@
 	left: 200px;
 }
 
-#maingrid {
-	border: 4px ridge #F88;
-	background: white;
-	color: black;
 
-	position: absolute;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	overflow: scroll;
-}
-
+/* Map Grid */
 table.grid {
 	table-layout: fixed;
 	border-collapse: collapse;
 	border: 1px solid black;
 	padding: 0;
 
+	/* If the browser doesn't support rgba() syntax, we fall back to plain white color */
+	background-color: white;
 	background-color: rgba(255, 255, 255, 0.5);
 }
 table.grid > tbody > tr > td {
@@ -47,33 +54,52 @@ table.grid > tbody > tr > td {
 	vertical-align: middle;
 }
 
-#maingrid.side_by_side table.grid {
+
+/* The Import/Export tab */
+#import_export_textarea {
+	display: block;
+	width: 100%;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+
+	min-height: 5em;
+	height: 90%;
+	height: calc(100% - 2em);
+	height: -moz-calc(100% - 3em);
+	/* Ah... Someday calc() will be a standard... */
+	/* http://www.w3.org/TR/css3-values/#calc */
+
+	margin: 0;
+}
+
+
+
+/* Code below needs to be rewritten or moved to somewhere else */
+
+
+#main_grid.side_by_side table.grid {
 	float: left;
 	margin-right: 4px;
 	margin-bottom: 4px;
 }
 
-#maingrid.stack_on_top table.grid {
+#main_grid.stack_on_top table.grid {
 	position: absolute;
 }
-#maingrid.stack_on_top table.grid.depth0 { top: 0px; left: 0px; }
-#maingrid.stack_on_top table.grid.depth1 { top: 4px; left: 4px; }
-#maingrid.stack_on_top table.grid.depth2 { top: 8px; left: 8px; }
-#maingrid.stack_on_top table.grid.depth3 { top: 12px; left: 12px; }
-#maingrid.stack_on_top table.grid.depth4 { top: 16px; left: 16px; }
-#maingrid.stack_on_top table.grid.depth5 { top: 20px; left: 20px; }
-#maingrid.stack_on_top table.grid.depth6 { top: 24px; left: 24px; }
-#maingrid.stack_on_top table.grid.depth7 { top: 28px; left: 28px; }
-#maingrid.stack_on_top table.grid.depth8 { top: 32px; left: 32px; }
-#maingrid.stack_on_top table.grid.depth9 { top: 36px; left: 36px; }
-#maingrid.stack_on_top table.grid.depth10 { top: 40px; left: 40px; }
-#maingrid.stack_on_top table.grid.depth11 { top: 44px; left: 44px; }
-#maingrid.stack_on_top table.grid.depth12 { top: 48px; left: 48px; }
-#maingrid.stack_on_top table.grid.depth13 { top: 52px; left: 52px; }
-#maingrid.stack_on_top table.grid.depth14 { top: 56px; left: 56px; }
-#maingrid.stack_on_top table.grid.depth15 { top: 60px; left: 60px; }
-
-
-#saveloadarea {
-	visibility: hidden;
-}
+#main_grid.stack_on_top table.grid.depth0 { top: 0px; left: 0px; }
+#main_grid.stack_on_top table.grid.depth1 { top: 4px; left: 4px; }
+#main_grid.stack_on_top table.grid.depth2 { top: 8px; left: 8px; }
+#main_grid.stack_on_top table.grid.depth3 { top: 12px; left: 12px; }
+#main_grid.stack_on_top table.grid.depth4 { top: 16px; left: 16px; }
+#main_grid.stack_on_top table.grid.depth5 { top: 20px; left: 20px; }
+#main_grid.stack_on_top table.grid.depth6 { top: 24px; left: 24px; }
+#main_grid.stack_on_top table.grid.depth7 { top: 28px; left: 28px; }
+#main_grid.stack_on_top table.grid.depth8 { top: 32px; left: 32px; }
+#main_grid.stack_on_top table.grid.depth9 { top: 36px; left: 36px; }
+#main_grid.stack_on_top table.grid.depth10 { top: 40px; left: 40px; }
+#main_grid.stack_on_top table.grid.depth11 { top: 44px; left: 44px; }
+#main_grid.stack_on_top table.grid.depth12 { top: 48px; left: 48px; }
+#main_grid.stack_on_top table.grid.depth13 { top: 52px; left: 52px; }
+#main_grid.stack_on_top table.grid.depth14 { top: 56px; left: 56px; }
+#main_grid.stack_on_top table.grid.depth15 { top: 60px; left: 60px; }

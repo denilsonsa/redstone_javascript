@@ -5,9 +5,11 @@
 <title>Redstone JavaScript</title>
 
 <link href="gui.css" rel="stylesheet" type="text/css">
+<link href="simple_tab.css" rel="stylesheet" type="text/css">
 <link href="tiles.css" rel="stylesheet" type="text/css">
 
 <script type="text/javascript" src="utils.js"></script>
+<script type="text/javascript" src="simple_tab.js"></script>
 <script type="text/javascript" src="redstone_constants.js"></script>
 <script type="text/javascript" src="redstone_objects.js"></script>
 <script type="text/javascript" src="redstone_ui.js"></script>
@@ -17,21 +19,37 @@
 
 <div id="leftcolumn">
 
-<!-- Some quick-and-dirty interface for quick experiments -->
-<!-- Should be replaced later! -->
-<input type="button" value="Map view" onclick="map_view_clicked()">
-<input type="button" value="JSON view" onclick="json_view_clicked()">
-
 </div>
 
 <div id="rightcolumn">
 
-	<div id="maingrid">
+	<ul id="main_tabs" class="simple_tab_menu">
+		<li><a href="#main_grid">Map view</a></li>
+		<li><a href="#import_export">Import/Export</a></li>
+		<li><a href="#about">About</a></li>
+	</ul>
+
+	<div id="main_grid" class="simple_tab_body">
+		<!-- The map will be rendered here, using JavaScript -->
 	</div>
 
-	<div id="saveloadarea">
-		<textarea id="saveloadtextarea"></textarea>
+	<div id="import_export" class="simple_tab_body">
+		<textarea id="import_export_textarea"></textarea>
+		<input type="button" value="Export Map to JSON" onclick="export_json_clicked()">
+		<input type="button" value="Export (pretty) Map to JSON" onclick="export_pretty_json_clicked()">
 		<input type="button" value="Import JSON" onclick="import_json_clicked()">
+	</div>
+
+	<div id="about" class="simple_tab_body">
+		<h1>Redstone Javascript</h1>
+		<p>A simple experiment that is getting bigger and better.</p>
+		<ul>
+		<li>Written in pure HTML + CSS + JavaScript.</li>
+		<li>No JavaScript framework was used.</li>
+		<li>No compatibility with Internet Explorer is expected.</li>
+		<li>Very little compatibility with older browser versions is expected.</li>
+		<li>Tested with Chrome 9, Firefox 3.6 and Opera 11.</li>
+		</ul>
 	</div>
 
 </div>
