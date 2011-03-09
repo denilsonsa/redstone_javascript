@@ -71,10 +71,43 @@ I wanted to get as far as I could, and then release it into the Internet.
 Maybe someone else can continue this project from where I stopped.
 
 
+Tools and services:
+----- --- ---------
+
+* Vim
+    http://www.vim.org/
+  My preferred editor
+
+* JSLint
+    http://www.jslint.com/
+  Nice (and sometimes a bit annoying) JavaScript checker
+
+* W3C HTML Validator
+    http://validator.w3.org/
+
+* W3C CSS Validator
+    http://jigsaw.w3.org/css-validator/
+
+* Mercurial and hg-git
+    http://mercurial.selenic.com/
+    http://hg-git.github.com/
+  I'm using Mercurial as my version control system, but I'm also using hg-git
+  to export the code to git.
+
+* BitBucket and GitHub
+    https://bitbucket.org/denilsonsa/redstone_javascript/
+    https://github.com/denilsonsa/redstone_javascript
+  I'm hosting this code at both BitBucket and GitHub.
+
+
 License:
 --------
 
-This project is licensed under GPL-3.
+The source-code of this is licensed under GPL-3.
+
+It includes images that were extracted directly from Minecraft files. These
+images are copyright of Mojang, and are *not* under GPL.
+
 
 I may change the license if someone gives me a good enough reason to do that,
 but I will keep this project open-source. (actually... I believe you can't
