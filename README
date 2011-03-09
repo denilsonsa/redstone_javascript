@@ -41,6 +41,9 @@ Desired features:
 * (fronted) Have a list of map layers with checkboxes, so the user can
   hide/show each layer individually.
 
+* (backend) Make sure the X, Y, Z coordinates in this project are consistent
+  with the coordinates in Minecraft, just to avoid confusion.
+
 * (backend) Be able to identify inconsistent map states (e.g. a torch in
   mid-air). Maybe implementing Map.validate() for this purpose.
 
