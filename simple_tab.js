@@ -3,7 +3,7 @@
 
 // JSLint comments:
 /*global add_class, remove_class, document */
-/*jslint undef: true, newcap: true, nomen: true, regexp: true, bitwise: true, maxerr: 50, maxlen: 78 */
+/*jslint white:true, undef: true, newcap: true, nomen: true, regexp: true, bitwise: true, maxerr: 50, maxlen: 78, indent: 4 */
 
 // How to use
 //
@@ -41,7 +41,7 @@ function SimpleTab(tab_list) {
 	}
 
 	var i;
-	for(i = 0; i < this.tab_list.length; i++) {
+	for (i = 0; i < this.tab_list.length; i++) {
 		var el = this.tab_list[i];
 
 		// Filling 'tabs'
@@ -51,14 +51,13 @@ function SimpleTab(tab_list) {
 		el.link.addEventListener('click', click_handler, false);
 	}
 }
-SimpleTab.prototype.set_active = function(active_id) {
-	this.tab_list.forEach(function(el, index, array){
-		if(el.id === active_id) {
+SimpleTab.prototype.set_active = function (active_id) {
+	this.tab_list.forEach(function (el, index, array) {
+		if (el.id === active_id) {
 			// Adding a class to <li>
 			add_class(el.link.parentNode, 'active');
 			el.body.style.visibility = 'visible';
-		}
-		else {
+		} else {
 			// Removing the class from <li>
 			remove_class(el.link.parentNode, 'active');
 			el.body.style.visibility = 'hidden';
@@ -74,14 +73,14 @@ function simple_tab_init(tab_menu_id, active_tab_id) {
 	// Returns a SimpleTab object, so it's possible to control the tab system
 	// by calling .set_active('tab_id') on that object.
 
-	var links = document.querySelectorAll('#'+tab_menu_id+' > li > a');
+	var links = document.querySelectorAll('#' + tab_menu_id + ' > li > a');
 	var tab_list = [];
 
 	var i;
-	for(i = 0; i < links.length; i++) {
+	for (i = 0; i < links.length; i++) {
 		var a = links[i];
 		var href = a.getAttribute('href');
-		if( href.charAt(0) === '#' ) {
+		if (href.charAt(0) === '#') {
 			// Get the id from the link
 			// href="#my_id" gets extracted to "my_id"
 			var id = href.replace(/^#/, '');
@@ -95,7 +94,7 @@ function simple_tab_init(tab_menu_id, active_tab_id) {
 
 	var simple_tab = new SimpleTab(tab_list);
 
-	if(active_tab_id) {
+	if (active_tab_id) {
 		simple_tab.set_active(active_tab_id);
 	}
 

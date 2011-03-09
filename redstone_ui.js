@@ -2,7 +2,7 @@
 
 // JSLint comments:
 /*global add_class, remove_class, Map, simple_tab_init, document, window, alert */
-/*jslint undef: true, newcap: true, nomen: true, regexp: true, bitwise: true, maxerr: 50, maxlen: 78 */
+/*jslint white:true, undef: true, newcap: true, nomen: true, regexp: true, bitwise: true, maxerr: 50, maxlen: 78, indent: 4 */
 
 var global_map;
 var main_tabs;
@@ -10,7 +10,7 @@ var main_tabs;
 function render_map_to_interface() {
 	var main_grid = document.getElementById('main_grid');
 
-	global_map.create_tables().forEach( function(el, index, array){
+	global_map.create_tables().forEach(function (el, index, array) {
 		main_grid.appendChild(el);
 	});
 }
@@ -43,11 +43,11 @@ function import_json_clicked() {
 
 	try {
 		json_obj = JSON.parse(str);
-	} catch(e) {
+	} catch (e) {
 		alert(e);
 	}
 
-	if(json_obj) {
+	if (json_obj) {
 		destroy_map();
 		global_map = new Map(json_obj);
 		render_map_to_interface();

@@ -118,15 +118,15 @@ var BLOCK_TYPE = {};
 
 // This function fills the above vars using the values from
 // RAW_BLOCK_TABLE.
-(function (){
+(function () {
 	var i, j;
-	for(i=0; i < RAW_BLOCK_TABLE.length; i++) {
+	for (i = 0; i < RAW_BLOCK_TABLE.length; i++) {
 		var block_type = RAW_BLOCK_TABLE[i][0];
 		var blocks = RAW_BLOCK_TABLE[i][1];
 
 		BLOCK_TYPE[block_type.toUpperCase()] = block_type;
 
-		for(j=0; j < blocks.length; j++) {
+		for (j = 0; j < blocks.length; j++) {
 			var name = blocks[j];
 			BLOCK_TO_BLOCK_TYPE[name] = block_type;
 			BLOCK[name.toUpperCase()] = name;

@@ -7,7 +7,8 @@ function add_class(element, className) {
 function remove_class(element, className) {
 	element.className = element.className.replace(
 		// Removing the class
-		new RegExp('\\b'+className+'\\b','g'),''
+		new RegExp('\\b' + className + '\\b', 'g'),
+		''
 	).replace(/ {2,}/g, ' ');  // Removing duplicate space chars
 }
 
