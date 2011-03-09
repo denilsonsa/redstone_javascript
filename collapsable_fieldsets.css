@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+/* Collapsable fieldsets! */
+fieldset.collapsable > legend {
+	cursor: pointer;
+}
+fieldset.collapsable > legend:before {
+	content: '\0025BE  ';
+	/* ▼ U+25BC */
+	/* ▾ U+25BE */
+}
+fieldset.collapsable.collapsed > * {
+	display: none !important;
+}
+fieldset.collapsable.collapsed > legend {
+	display: block !important;
+}
+fieldset.collapsable.collapsed > legend:before {
+	content: '\0025B8  ';
+	/* ▶ U+25B6 */
+	/* ▸ U+25B8 */
+}

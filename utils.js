@@ -26,6 +26,7 @@ function toggle_class(element, className) {
 	}
 }
 
+
 function parseIntOrDefault(s, default_value) {
 	// Converts a string to an integer (using base 10) and returns it.
 	// If the string can't be converted, returns a supplied default_value
