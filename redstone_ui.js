@@ -58,3 +58,7 @@ function export_pretty_json_clicked() {
 	var import_export_textarea = document.getElementById('import_export_textarea');
 	import_export_textarea.value = JSON.stringify(global_map, null, '\t');
 }
+function clear_json_clicked() {
+	var import_export_textarea = document.getElementById('import_export_textarea');
+	import_export_textarea.value = '';
+}
