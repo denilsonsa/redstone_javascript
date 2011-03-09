@@ -1,5 +1,8 @@
 // This file defines the User-Interface and everything browser-related.
 
+// JSLint comments:
+/*global add_class, remove_class, Map, simple_tab_init, document, window, alert */
+/*jslint undef: true, newcap: true, nomen: true, regexp: true, bitwise: true, maxerr: 50, maxlen: 78 */
 
 var global_map;
 var main_tabs;

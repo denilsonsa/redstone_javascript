@@ -47,9 +47,19 @@
 		<ul>
 		<li>Written in pure HTML + CSS + JavaScript.</li>
 		<li>No JavaScript framework was used.</li>
+		<li>Valid HTML5 and CSS3.</li>
 		<li>No compatibility with Internet Explorer is expected.</li>
 		<li>Very little compatibility with older browser versions is expected.</li>
-		<li>Tested with Chrome 9, Firefox 3.6 and Opera 11.</li>
+		<li>Tested with <a href="http://www.google.com/chrome">Chrome 9</a>, <a href="http://www.mozilla.com/firefox/">Firefox 3.6</a> and <a href="http://www.opera.com/browser/">Opera 11</a>.</li>
+		<li>Written using <a href="http://www.vim.org/">Vim</a></li>
+		</ul>
+		<hr>
+		<p>Some boring details about the JavaScript code:</p>
+		<ul>
+		<li>It defines objects using prototypes, the native JavaScript approach.</li>
+		<li>It uses <code>Array.forEach()</code>, which is already implemented on recent browsers, but I've also provided a JavaScript implementation for browsers that don't have it yet.</li>
+		<li>It uses <code>document.querySelectorAll()</code>. I hope your browser has support for this! (in fact, if it didn't, you wouldn't be reading this text, as these tabs do use this function)</li>
+		<li>It uses <code>JSON.parse()</code> and <code>JSON.stringify()</code>. No fallback is provided if your browser doesn't have this feature.</li>
 		</ul>
 	</div>
 

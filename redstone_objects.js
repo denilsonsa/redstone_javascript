@@ -1,5 +1,8 @@
 // This file defines the basic data objects and data structures.
 
+// JSLint comments:
+/*global BLOCK, BLOCK_TYPE, add_class, remove_class, document */
+/*jslint undef: true, newcap: true, nomen: true, regexp: true, bitwise: true, maxerr: 50, maxlen: 78 */
 
 // The Map object
 //
@@ -12,20 +15,23 @@ function Map(depth_or_json, height, width) {
 	// new Map(json_object)
 	//   json_object => JSON object to be converted to Map
 
-	if( height == undefined && width == undefined ) {
-		// Let's assume the first argument is a JSON object
-		var is_json = true;
+	var depth;
+	var is_json;
 
-		var depth = depth_or_json.depth;
+	if( height === undefined && width === undefined ) {
+		// Let's assume the first argument is a JSON object
+		is_json = true;
+
+		depth = depth_or_json.depth;
 		height = depth_or_json.height;
 		width = depth_or_json.width;
 	}
-	else if( height == undefined || width == undefined ) {
+	else if( height === undefined || width === undefined ) {
 		throw new Error('Incorrect parameters');
 	}
 	else {
-		var is_json = false;
-		var depth = depth_or_json;
+		is_json = false;
+		depth = depth_or_json;
 	}
 
 	this.depth = depth;
@@ -34,7 +40,8 @@ function Map(depth_or_json, height, width) {
 
 	this.grids = new Array(depth);
 
-	for(var i=0; i < depth; i++) {
+	var i;
+	for(i=0; i < depth; i++) {
 		if( is_json ) {
 			this.grids[i] = new Grid(this, i, height, width, depth_or_json.grids[i]);
 		}
@@ -50,34 +57,38 @@ Map.prototype.toJSON = function() {
 		'width': this.width,
 		'grids': this.grids
 	};
-}
+};
 Map.prototype.create_tables = function() {
 	// Creates a <table> for each grid and returns an Array of such tables.
 	var tables = new Array(this.depth);
-	for(var i=0; i < this.depth; i++) {
+	var i;
+	for(i=0; i < this.depth; i++) {
 		tables[i] = this.grids[i].create_table();
 	}
 	return tables;
-}
+};
 Map.prototype.destroy_tables = function() {
 	// Destroy the associated HTML tables and remove the related references
 	// from objects.
-	for(var i=0; i < this.depth; i++) {
+	var i;
+	for(i=0; i < this.depth; i++) {
 		this.grids[i].destroy_table();
 	}
-}
+};
 Map.prototype.remove_circular_references = function() {
 	// This function aims to aid garbage collection, and should be called
 	// whenever this object is not needed anymore.
-	for(var i=0; i < this.depth; i++) {
+	var i;
+	for(i=0; i < this.depth; i++) {
 		this.grids[i].remove_circular_references();
 	}
-}
+};
 Map.prototype.remove_html_references = function() {
-	for(var i=0; i < this.depth; i++) {
+	var i;
+	for(i=0; i < this.depth; i++) {
 		this.grids[i].remove_html_references();
 	}
-}
+};
 
 
 // The Grid object
@@ -104,16 +115,17 @@ function Grid(map, z, height, width, json_data) {
 
 	this.cells = new Array(height);
 
-	for(var i=0; i < height; i++) {
+	var i,j;
+	for(i=0; i < height; i++) {
 		this.cells[i] = new Array(width);
-		for(var j=0; j < width; j++) {
+		for(j=0; j < width; j++) {
 			this.cells[i][j] = new Cell(this, z, i, j);
 			if( json_data ) {
 				this.cells[i][j].set(json_data.cells[i][j].block);
 			}
 		}
 	}
-}
+};
 Grid.prototype.toJSON = function() {
 	return {
 		//'z': this.z,
@@ -121,7 +133,7 @@ Grid.prototype.toJSON = function() {
 		//'height': this.height,
 		'cells': this.cells
 	};
-}
+};
 Grid.prototype.create_table = function() {
 	// Creates a new <table> grid and returns it.
 
@@ -137,10 +149,11 @@ Grid.prototype.create_table = function() {
 	var tbody = document.createElement('tbody');
 	table.appendChild(tbody);
 
-	for(var i=0; i < this.height; i++) {
+	var i, j;
+	for(i=0; i < this.height; i++) {
 		var tr = document.createElement('tr');
 		tbody.appendChild(tr);
-		for(var j=0; j < this.width; j++) {
+		for(j=0; j < this.width; j++) {
 			var td = document.createElement('td');
 			td.className = 'cell cell_' + this.cells[i][j].block;
 
@@ -154,7 +167,7 @@ Grid.prototype.create_table = function() {
 	}
 
 	return table;
-}
+};
 Grid.prototype.destroy_table = function() {
 	// Destroy the associated HTML table and remove the related references
 	// from objects.
@@ -164,24 +177,26 @@ Grid.prototype.destroy_table = function() {
 		this.remove_html_references();
 		table.parentNode.removeChild(table);
 	}
-}
+};
 Grid.prototype.remove_circular_references = function() {
 	// This function aims to aid garbage collection, and should be called
 	// whenever this object is not needed anymore.
-	for(var i=0; i < this.height; i++) {
-		for(var j=0; j < this.width; j++) {
+	var i, j;
+	for(i=0; i < this.height; i++) {
+		for(j=0; j < this.width; j++) {
 			this.cells[i][j].remove_circular_references();
 		}
 	}
 
 	this.map = undefined;
-}
+};
 Grid.prototype.remove_html_references = function() {
 	// This function removes the double-linked references between JavaScript
 	// objects and HTML elements.
 
-	for(var i=0; i < this.height; i++) {
-		for(var j=0; j < this.width; j++) {
+	var i,j;
+	for(i=0; i < this.height; i++) {
+		for(j=0; j < this.width; j++) {
 			this.cells[i][j].remove_html_references();
 		}
 	}
@@ -189,7 +204,7 @@ Grid.prototype.remove_html_references = function() {
 	delete this.table_element.map_object;
 	delete this.table_element.grid_object;
 	this.table_element = undefined;
-}
+};
 
 
 // The Cell object
@@ -220,7 +235,7 @@ Cell.prototype.toJSON = function() {
 		//'type': this.type,
 		'block': this.block
 	};
-}
+};
 Cell.prototype.set = function(block_name) {
 	if( this.td_element ) {
 		remove_class(this.td_element, 'cell_'+this.block)
@@ -229,16 +244,16 @@ Cell.prototype.set = function(block_name) {
 
 	this.block = block_name;
 	this.type = BLOCK_TO_BLOCK_TYPE[block_name];
-}
+};
 Cell.prototype.remove_circular_references = function() {
 	// This function aims to aid garbage collection, and should be called
 	// whenever this object is not needed anymore.
 	this.map = undefined;
 	this.grid = undefined;
-}
+};
 Cell.prototype.remove_html_references = function() {
 	// This function removes the double-linked references between JavaScript
 	// objects and HTML elements.
 	delete this.td_element.cell_object;
 	this.td_element = undefined;
-}
+};

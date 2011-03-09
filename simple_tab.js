@@ -1,6 +1,10 @@
 // This code was inspired by:
 // http://www.pinceladasdaweb.com.br/blog/2010/01/13/javascript-tabs-sem-framework-ou-plugin/
 
+// JSLint comments:
+/*global add_class, remove_class, document */
+/*jslint undef: true, newcap: true, nomen: true, regexp: true, bitwise: true, maxerr: 50, maxlen: 78 */
+
 // How to use
 //
 // Add HTML similar to this:
@@ -26,7 +30,7 @@ function SimpleTab(tab_list) {
 
 	// 'tabs' is an associative array
 	// Given an 'id', it maps to the same thing as 'tab_list'
-	this.tabs = {}
+	this.tabs = {};
 
 	// 'self' is used in this inner function
 	var self = this;
@@ -36,7 +40,8 @@ function SimpleTab(tab_list) {
 		ev.preventDefault();
 	}
 
-	for(var i = 0; i < this.tab_list.length; i++) {
+	var i;
+	for(i = 0; i < this.tab_list.length; i++) {
 		var el = this.tab_list[i];
 
 		// Filling 'tabs'
@@ -44,11 +49,11 @@ function SimpleTab(tab_list) {
 
 		// Adding some event handlers
 		el.link.addEventListener('click', click_handler, false);
-	};
+	}
 }
 SimpleTab.prototype.set_active = function(active_id) {
 	this.tab_list.forEach(function(el, index, array){
-		if(el.id == active_id) {
+		if(el.id === active_id) {
 			// Adding a class to <li>
 			add_class(el.link.parentNode, 'active');
 			el.body.style.visibility = 'visible';
@@ -59,7 +64,7 @@ SimpleTab.prototype.set_active = function(active_id) {
 			el.body.style.visibility = 'hidden';
 		}
 	});
-}
+};
 
 function simple_tab_init(tab_menu_id, active_tab_id) {
 	// Initializes a SimpleTab.
@@ -72,10 +77,11 @@ function simple_tab_init(tab_menu_id, active_tab_id) {
 	var links = document.querySelectorAll('#'+tab_menu_id+' > li > a');
 	var tab_list = [];
 
-	for(var i = 0; i < links.length; i++) {
+	var i;
+	for(i = 0; i < links.length; i++) {
 		var a = links[i];
 		var href = a.getAttribute('href');
-		if( href.charAt(0) == '#' ) {
+		if( href.charAt(0) === '#' ) {
 			// Get the id from the link
 			// href="#my_id" gets extracted to "my_id"
 			var id = href.replace(/^#/, '');
