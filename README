@@ -1,0 +1,81 @@
+Redstone JavaScript
+======== ==========
+
+This thing is the beginnings of a Redstone editor/simulator, written
+completely in JavaScript.
+
+In case you don't know, redstone is a kind of material used to make
+electrical-like circuits inside Minecraft game.
+
+Currently, it has the basic interface to import/export a map from a JSON
+string, and not much else.
+
+
+Current features:
+------- ---------
+
+* Decoupled backend and frontend.
+
+* Backend can load a map from a JSON string, or export the map to a JSON
+  string.
+
+* Frontend has basic interface, with some tabs and some options inside a
+  fieldset.
+
+* Written using latest technologies from the web! And won't run on older
+  browsers! Don't even think about Internet Explorer!
+
+* Written using no JavaScript framework. That's right! I did not use jQuery,
+  and I don't plan using it!
+  (don't get me wrong, jQuery is a great framework, but I wanted to write
+  something without using any framework, just to know how is the current
+  JavaScript and browser state nowadays)
+
+
+Desired features:
+------- ---------
+
+* (fronted) Have a palette of "tiles" (blocks) at the left column, so that the
+  user can click on the map to put blocks. In order words, become an "editor".
+
+* (fronted) Have a list of map layers with checkboxes, so the user can
+  hide/show each layer individually.
+
+* (backend) Be able to identify inconsistent map states (e.g. a torch in
+  mid-air). Maybe implementing Map.validate() for this purpose.
+
+* (backend) Be able to automatically realign redstone wires, just like in real
+  Minecraft. Maybe implementing Map.realign_wires() for this purpose.
+
+* (backend) Be able to simulate redstone circuits. This will require adding a
+  "power" property (or field) to Cell objects. Probably also add some extra
+  properties (or fields) for other blocks (e.g. the repeater delay)
+
+
+Project History and Motivation:
+------- ------- --- -----------
+
+This project started because... Well... It was Carnival time and I had a few
+days of free time. I knew that "Baezon's Redstone Simulator" [1] was
+abandoned, and there is some effort to rewrite it [2].
+
+[1] http://www.minecraftforum.net/viewtopic.php?t=17924
+[2] http://www.minecraftforum.net/viewtopic.php?t=192352
+
+Then I thought: well, why can't we rewrite it in JavaScript?
+
+I always wanted to write a tile-based editor (in JavaScript, why not?), and
+thus I decided to start this project. I've never planned to finish it
+completely, because I know I won't have much free time after the Carnival, but
+I wanted to get as far as I could, and then release it into the Internet.
+Maybe someone else can continue this project from where I stopped.
+
+
+License:
+--------
+
+This project is licensed under GPL-3.
+
+I may change the license if someone gives me a good enough reason to do that,
+but I will keep this project open-source. (actually... I believe you can't
+close-source HTML and JavaScript)
