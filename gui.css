@@ -75,7 +75,7 @@ h1 {
 	width: 4em;
 }
 #map_view_style fieldset input[type=range] {
-	width: 6em;
+	width: 4em;
 }
 
 
@@ -93,8 +93,6 @@ table.grid {
 table.grid > tbody > tr > td {
 	border: 1px solid black;
 	padding: 0;
-	width: 32px;
-	height: 32px;
 
 	text-align: center;
 	vertical-align: middle;

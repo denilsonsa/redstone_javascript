@@ -40,14 +40,16 @@ function update_dynamic_mapgrid_stylesheet() {
 	// Setting the opacity of each map layer background
 	var bg_opacity_el = document.querySelector('#map_view_style input[name=bg_opacity]');
 	var fg_opacity_el = document.querySelector('#map_view_style input[name=fg_opacity]');
+	var border_opacity_el = document.querySelector('#map_view_style input[name=border_opacity]');
 	var bg_opacity = parseFloatOrDefault(bg_opacity_el.value, 0.5);
 	var fg_opacity = parseFloatOrDefault(fg_opacity_el.value, 0.5);
+	var border_opacity = parseFloatOrDefault(border_opacity_el.value, 0.5);
 	s += 'table.grid {'
 		+ '  background-color: rgba(255, 255, 255, ' + bg_opacity + ');'
 		+ '  opacity: ' + fg_opacity + ';'
 		+ '}'
 		+ 'table.grid > tbody > tr > td {'
-		+ '  border-color: rgba(0, 0, 0, ' + bg_opacity + ');'
+		+ '  border-color: rgba(0, 0, 0, ' + border_opacity + ');'
 		+ '}';
 
 	// Selecting the desired map layout
