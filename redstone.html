@@ -20,61 +20,72 @@
 </head>
 <body>
 
-<div id="leftcolumn">
-[ Here, someday in future... A toolbox... And some options too. ]
+<div id="topbar">
 
-<form>
-<fieldset>
-	<legend>Map style</legend>
-	<label><input type="radio" name="map_style" value="" checked> Nothing</label>
-	<label><input type="radio" name="map_style" value="side_by_side"> Side-by-side</label>
-	<label><input type="radio" name="map_style" value="stacking"> Stacking</label>
-</fieldset>
-</form>
+	<h1 class="pagetitle">Redstone Javascript</h1>
+
 </div>
 
-<div id="rightcolumn">
+<div id="pagebody">
 
-	<ul id="main_tabs" class="simple_tab_menu">
-		<li><a href="#main_grid">Map view</a></li>
-		<li><a href="#import_export">Import/Export</a></li>
-		<li><a href="#about">About</a></li>
-	</ul>
+	<div id="leftcolumn">
+		[ Here, someday in future... A toolbox... And some options too. ]
 
-	<div id="main_grid" class="simple_tab_body">
-		<!-- The map will be rendered here, using JavaScript -->
-	</div>
+		<form>
+		<fieldset>
+			<legend>Map style</legend>
+			<label><input type="radio" name="map_style" value="" checked> Nothing</label>
+			<label><input type="radio" name="map_style" value="side_by_side"> Side-by-side</label>
+			<label><input type="radio" name="map_style" value="stacking"> Stacking</label>
+		</fieldset>
+		</form>
 
-	<div id="import_export" class="simple_tab_body">
-		<textarea id="import_export_textarea"></textarea>
-		<input type="button" value="Export Map to JSON" onclick="export_json_clicked()">
-		<input type="button" value="Export (pretty) Map to JSON" onclick="export_pretty_json_clicked()">
-		<input type="button" value="Import JSON" onclick="import_json_clicked()">
-		<input type="button" value="Clear" onclick="clear_json_clicked()">
-	</div>
+	</div>  <!-- #leftcolumn -->
 
-	<div id="about" class="simple_tab_body">
-		<h1>Redstone Javascript</h1>
-		<p>A simple experiment that is getting bigger and better.</p>
-		<ul>
-		<li>Written in pure HTML + CSS + JavaScript.</li>
-		<li>No JavaScript framework was used.</li>
-		<li>Valid HTML5 and CSS3.</li>
-		<li>No compatibility with Internet Explorer is expected.</li>
-		<li>Very little compatibility with older browser versions is expected.</li>
-		<li>Tested with <a href="http://www.google.com/chrome">Chrome 9</a>, <a href="http://www.mozilla.com/firefox/">Firefox 3.6</a> and <a href="http://www.opera.com/browser/">Opera 11</a>.</li>
-		<li>Written using <a href="http://www.vim.org/">Vim</a></li>
+	<div id="rightcolumn">
+
+		<ul id="main_tabs" class="simple_tab_menu">
+			<li><a href="#main_grid">Map view</a></li>
+			<li><a href="#import_export">Import/Export</a></li>
+			<li><a href="#about">About</a></li>
 		</ul>
-		<hr>
-		<p>Some boring details about the JavaScript code:</p>
-		<ul>
-		<li>It defines objects using prototypes, the native JavaScript approach.</li>
-		<li>It uses <code>Array.forEach()</code>, which is already implemented on recent browsers, but I've also provided a JavaScript implementation for browsers that don't have it yet.</li>
-		<li>It uses <code>document.querySelectorAll()</code>. I hope your browser has support for this! (in fact, if it didn't, you wouldn't be reading this text, as these tabs do use this function)</li>
-		<li>It uses <code>JSON.parse()</code> and <code>JSON.stringify()</code>. No fallback is provided if your browser doesn't have this feature.</li>
-		<li>It (mostly) passes <a href="http://www.jslint.com/">JSLint</a> verifications.</li>
-		</ul>
-	</div>
+
+		<div id="main_grid" class="simple_tab_body">
+			<!-- The map will be rendered here, using JavaScript -->
+		</div>
+
+		<div id="import_export" class="simple_tab_body">
+			<textarea id="import_export_textarea"></textarea>
+			<input type="button" value="Export Map to JSON" onclick="export_json_clicked()">
+			<input type="button" value="Export (pretty) Map to JSON" onclick="export_pretty_json_clicked()">
+			<input type="button" value="Import JSON" onclick="import_json_clicked()">
+			<input type="button" value="Clear" onclick="clear_json_clicked()">
+		</div>
+
+		<div id="about" class="simple_tab_body">
+			<h1>Redstone Javascript</h1>
+			<p>A simple experiment that is getting bigger and better.</p>
+			<ul>
+			<li>Written in pure HTML + CSS + JavaScript.</li>
+			<li>No JavaScript framework was used.</li>
+			<li>Valid HTML5 and CSS3.</li>
+			<li>No compatibility with Internet Explorer is expected.</li>
+			<li>Very little compatibility with older browser versions is expected.</li>
+			<li>Tested with <a href="http://www.google.com/chrome">Chrome 9</a>, <a href="http://www.mozilla.com/firefox/">Firefox 3.6</a> and <a href="http://www.opera.com/browser/">Opera 11</a>.</li>
+			<li>Written using <a href="http://www.vim.org/">Vim</a></li>
+			</ul>
+			<hr>
+			<p>Some boring details about the JavaScript code:</p>
+			<ul>
+			<li>It defines objects using prototypes, the native JavaScript approach.</li>
+			<li>It uses <code>Array.forEach()</code>, which is already implemented on recent browsers, but I've also provided a JavaScript implementation for browsers that don't have it yet.</li>
+			<li>It uses <code>document.querySelectorAll()</code>. I hope your browser has support for this! (in fact, if it didn't, you wouldn't be reading this text, as these tabs do use this function)</li>
+			<li>It uses <code>JSON.parse()</code> and <code>JSON.stringify()</code>. No fallback is provided if your browser doesn't have this feature.</li>
+			<li>It (mostly) passes <a href="http://www.jslint.com/">JSLint</a> verifications.</li>
+			</ul>
+		</div>
+
+	</div>  <!-- #rightcolumn -->
 
 </div>
 

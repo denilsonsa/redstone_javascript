@@ -16,6 +16,28 @@ h1 {
 
 
 /* Main layout */
+#topbar {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	height: 36px;
+
+	/* Someday... Improve this styling... */
+	background: #C6C6C6;
+	border-color: #EEE #555 #555 #EEE;
+	border-width: 1px;
+	border-style: solid;
+	border-radius: 8px;
+	-moz-border-radius: 8px;
+}
+#pagebody{
+	position: absolute;
+	top: 38px;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
 #leftcolumn {
 	position: absolute;
 	top: 0;
@@ -30,6 +52,18 @@ h1 {
 	right: 0;
 	bottom: 0;
 	left: 200px;
+}
+
+
+/* Top bar elements */
+#topbar .pagetitle {
+	font: inherit;
+	font-family: "Geo", sans-serif;
+	font-size: 36px;
+	line-height: 1em;
+	margin: 0;
+	padding: 0;
+	text-align: left;
 }
 
 

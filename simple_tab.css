@@ -39,6 +39,7 @@ ul.simple_tab_menu > li > a {
 
 	/* http://www.google.com/webfonts/family?family=Geo */
 	font-family: "Geo", sans-serif;
+	text-shadow: 1px 1px 1px #EEE;
 }
 ul.simple_tab_menu > li {
 	margin-left: 4px;
