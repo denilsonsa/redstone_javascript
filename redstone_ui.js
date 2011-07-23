@@ -166,6 +166,9 @@ function ui_init() {
 		// But until 'forminput' event is available on most browsers, this
 		// solution stays, just because there is no other solution as simple as
 		// this one.
+		//
+		// Huh... 'forminput' won't exist anymore. Instead, we can use 'input'.
+		// http://www.w3.org/Bugs/Public/show_bug.cgi?id=11129
 
 		// onchange only fires on blur (but Opera fires it for spinbox too).
 		// oninput fires for each keypress or spinbox action, but doesn't fire
